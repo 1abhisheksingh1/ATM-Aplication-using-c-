@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+
+void showmenu(){
+    cout<<"**********MENU**********"<<endl;
+    cout<<"1.check balance:"<<endl;
+    cout<<"2.deposit:"<<endl;
+    cout<<"3.withdraw:"<<endl; 
+    cout<<"4. exit"<<endl;
+    cout<<"************************"<<endl;
+
+}
+
+int main(){
+
+    //check balance ,deposit,withdraw,show menu
+    int option;
+    double balance=1000;
+    double withdraw;
+
+    do{
+    showmenu();
+    cout<<"choose option:";
+    cin>>option;
+
+    switch (option){
+        case 1:
+        cout<<"balance is :"<<balance<<"rs"<<endl;
+        break;
+
+        case 2:
+        cout<<"deposit :";
+        double deposit;
+        cin>>deposit;
+        balance+=deposit;
+        break;
+
+        case 3:
+        cout<<"withdraw :";
+        double withdraw;
+        cin>>withdraw;
+        if(withdraw<=balance)
+        balance-=withdraw;
+        else
+        cout<<"not enough money"<<endl;
+        
+        break;
+
+    default:{
+        cout<<"envalid option"<<endl;}
+
+
+    }
+    }while(option!=4);
+
+
+
+}
